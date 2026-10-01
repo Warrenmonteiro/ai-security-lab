@@ -1,0 +1,32 @@
+[project]
+name = "pdf-tools"
+version = "0.1.0"
+description = "Small, tested command-line tools for working with PDFs."
+readme = "README.md"
+authors = [{ name = "Warren Monteiro" }]
+requires-python = ">=3.11"
+dependencies = [
+    "pypdf>=6.19.0",
+    "typer>=0.27.2",
+]
+
+# Installs a `pdf-tools` command that runs the Typer app in cli.py
+[project.scripts]
+pdf-tools = "pdf_tools.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.8.17,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# Default checks plus import sorting, modern-Python upgrades and common bug patterns
+select = ["E", "F", "I", "UP", "B"]

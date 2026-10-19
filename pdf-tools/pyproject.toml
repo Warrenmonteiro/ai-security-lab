@@ -6,8 +6,11 @@ readme = "README.md"
 authors = [{ name = "Warren Monteiro" }]
 requires-python = ">=3.11"
 dependencies = [
+    "fastapi>=0.142.2",
     "pypdf>=6.19.0",
+    "python-multipart>=0.0.32",
     "typer>=0.27.2",
+    "uvicorn[standard]>=0.54.0",
 ]
 
 # Installs a `pdf-tools` command that runs the Typer app in cli.py
@@ -20,6 +23,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "httpx2>=2.14.0",
     "pytest>=9.1.1",
     "ruff>=0.16.10",
 ]
